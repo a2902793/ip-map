@@ -9,16 +9,16 @@ import math
 import argparse
 
 parser = argparse.ArgumentParser(description='Create a Worldmap out of Numbers and IPv4 addresses')
-parser.add_argument('input_file', metavar='input_file', type=str,
-                    help='File with Number of attempts followed by IPv4 address, one per line')
+parser.add_argument('--input', dest='input_file', type=str, default='failed_logins.txt',
+                    help='File with number of failed logins followed by IPv4 address, one per line, defaults to failed_logins.txt')
+parser.add_argument('--geolocation-csv', dest='geolocation_filename', type=str, default='geolocation.csv',
+                    help='CSV file with subnet / location mapping, defaults to geolocation.csv')
 parser.add_argument('--cache-locations', dest='write_locations_file', type=str,
                     help='Cache predicted locations in a file')
 parser.add_argument('--read-cache', dest='read_locations_file', type=str,
                     help='Read location data from cache rather then computing it')
 parser.add_argument('--result-filename', dest='result_filename', type=str, default='result.png',
-                    help='Filename of the resulting map')
-parser.add_argument('--geolocation-csv', dest='geolocation_filename', type=str, default='geolocation.csv',
-                    help='CSV file with geolocation / network data')
+                    help='Filename of the resulting map, defaults to result.png')
 
 args = parser.parse_args()
 
