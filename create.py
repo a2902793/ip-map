@@ -2,7 +2,7 @@ import csv
 import ipaddress
 from time import time
 
-# Map
+# Ma
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 
@@ -23,7 +23,7 @@ def prepare_data():
         with open("geolocation.csv", newline='') as csvfile:
             geoloc_reader = csv.DictReader(csvfile)
             for line in geoloc_reader:
-                subnet_locations.append((line['network'], float(line['latitude']), float(line['longitude']))
+                subnet_locations.append((line['network'], line['latitude'], line['longitude']))
 
     print('Start Loading Location and IP File')
     t1 = time()
