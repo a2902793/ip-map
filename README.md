@@ -42,7 +42,7 @@ optional arguments:
 
 ```
 
-[example]: examples/result.png
+[example]: examples/example.png "Example Graphic"
 [matplotlib]: http://matplotlib.org
 [cartopy]: http://scitools.org.uk/cartopy/
 [maxmind]: https://dev.maxmind.com/geoip/geoip2/geolite2/
