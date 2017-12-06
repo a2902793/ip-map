@@ -108,8 +108,10 @@ def draw_map(filename):
     # Legend
     sm = plt.cm.ScalarMappable(cmap=colormap,norm=mpl.colors.LogNorm(1,max_failed))
     sm._A = []
-    colorbar = plt.colorbar(sm,ax=ax,ticks=[10**i for i in range(0, round(math.log10(max_failed)))]+[max_failed], format='%.0f')
-    colorbar.ax.set_ylabel('Number of Attempts', rotation=90)
+    colorbar = plt.colorbar(sm,ax=ax,orientation='horizontal',ticks=[10**i for i in range(0, round(math.log10(max_failed)))]+[max_failed], format='%.0f')
+    colorbar.ax.set_xlabel('Number of Attempts')
+
+
     plt.title("Failed SSH Logins by Location and #Attempts")
     plt.tight_layout()
     plt.savefig(filename, dpi=1000)
