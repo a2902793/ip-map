@@ -11,7 +11,7 @@ Furthermore, you need a CSV file which maps IPv4 subnetworks to geolocations, li
 # Usage
 On your Server, you need to read the `auth.log` files:
 ```bash
-grep "Failed" /var/log/auth.log | grep -Po "[\d]+\.[\d]+\.[\d]+\.[\d]+" | sort | uniq -c > access_failed.csv
+grep "Failed" /var/log/auth.log | grep -Po "[\d]+\.[\d]+\.[\d]+\.[\d]+" | sort | uniq -c > failed_logins.txt
 ```
 
 As most of the computing time is used for the matching of IPs to a subnetwork, this result can be cached with the `--cache-locations locations.csv` parameter. So if the dataset did not change, it can be run with the `--read-cache locations.csv` parameter to directly start with drawing the map.
