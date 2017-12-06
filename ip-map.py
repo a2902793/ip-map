@@ -74,14 +74,14 @@ def analyze():
     t2 = time()
     print('Finding Location took %f seconds' % round(t2-t1, 2))
 
-def write_locations():
-    with open("locations.csv", "w") as tempfile:
+def write_locations(cache_name):
+    with open(cache_name, "w") as tempfile:
         locationwriter = csv.writer(tempfile)
         for line in results:
             locationwriter.writerow(line)
 
-def load_results():
-    with open("locations.csv") as tempfile:
+def load_results(cache_name):
+    with open(cache_name) as tempfile:
         locationreader = csv.reader(tempfile)
         for row in locationreader:
             results.append(row)
